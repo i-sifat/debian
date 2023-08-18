@@ -14,10 +14,17 @@ apt update
 apt upgrade -y
 
 # Install required packages
-apt install feh kitty rofi picom thunar nitrogen lxpolkit x11-xserver-utils unzip libimlib2-dev wget pulseaudio sudo pavucontrol build-essential libx11-dev libxft-dev libxinerama-dev curl -y
+apt install feh kitty rofi picom thunar nitrogen lxpolkit x11-xserver-utils unzip libimlib2-dev wget pulseaudio sudo pavucontrol build-essential libx11-dev libxft-dev libxinerama-dev curl neofetch flameshot psmisc mangohud vim lxappearance papirus-icon-theme lightdm -y
+sudo su
+usermod -aG sudo $username
 
-# Installing Other less important Programs
-apt install neofetch flameshot psmisc mangohud vim lxappearance papirus-icon-theme lightdm -y
+# Install slick-greeter LightDM theme
+sudo apt install lightdm-slick-greeter -y
+
+# Configure LightDM to use slick-greeter
+echo "[Seat:*]" > /etc/lightdm/lightdm.conf
+echo "greeter-session=lightdm-slick-greeter" >> /etc/lightdm/lightdm.conf
+
 
 # Download Nordic Theme
 cd /usr/share/themes/
@@ -54,7 +61,8 @@ deb http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmwa
 sudo apt update
 sudo apt install nvidia-driver firmware-misc-nonfree
 
-
+# Install the specific NVIDIA driver version
+sudo apt install nvidia-driver=470.182.03-1 -t bookworm -y
 
 # Install brave-browser
 curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
