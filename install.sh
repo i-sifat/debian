@@ -48,6 +48,14 @@ cd mybash
 bash setup.sh
 cd $builddir
 
+#Debian 12 "Bookworm
+#Add "contrib", "non-free" and "non-free-firmware" components to /etc/apt/sources.list, for example:
+deb http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware
+sudo apt update
+sudo apt install nvidia-driver firmware-misc-nonfree
+
+
+
 # Install brave-browser
 curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
