@@ -1,4 +1,4 @@
-## Custom Debian Net Installer Script By i-Sifat(Inspired From Debian-titus)
+## Custom Debian Net Installer Script By i-Sifat   (Inspired From Debian-titus)
 
 This repository contains a custom script for automating the installation process of Debian using the net installer. The script draws inspiration from Chris Titus Tech's Debian-titus project. The aim is to simplify and expedite the installation process, making it easy for users to set up a Debian system according to their preferences.
 
